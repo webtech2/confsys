@@ -13,7 +13,7 @@ use App\Conference;
 |
 */
 Route::get('/', function () {
-
+    
 });
 
 Auth::routes();
