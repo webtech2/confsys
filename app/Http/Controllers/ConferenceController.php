@@ -22,7 +22,7 @@ class ConferenceController extends Controller
      */
     public function index()
     {
-        return view('conferences', array('title' => 'Conferences', 'conferences' => Conference::all()));
+        return view('conferences', array('title' => 'Conferences', 'conferences' => Conference::orderBy('start_date')->get()));
     }
 
     /**
@@ -92,37 +92,8 @@ class ConferenceController extends Controller
         return view('conference_show', array('conf' => Conference::findOrFail($id)));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function indexByCountry()
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+        return view('countries', array('countries' => Country::all()));
+    }    
 }

@@ -20,3 +20,4 @@ Route::get('admin', 'AdminController');
 Route::resource('country', 'CountryController', ['only' => ['create', 'store']]);
 Route::resource('city', 'CityController', ['only' => ['create', 'store']]);
 Route::resource('discount', 'DiscountController', ['only' => ['create', 'store']]);
+Route::get('countries/conferences', 'ConferenceController@indexByCountry');
