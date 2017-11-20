@@ -13,6 +13,7 @@
                        <li><a href="{{ url('country/create') }}">Add a new country</a></li>
                        <li><a href="{{ url('city/create') }}">Add a new city</a></li>
                        <li><a href="{{ url('conference/create') }}">Add a new conference</a></li>
+                       <li><a href="{{ url('discount/create') }}">Add a new discount code</a></li>
                     </ul>
                 </div>
             </div>

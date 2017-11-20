@@ -19,3 +19,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin', 'AdminController');
 Route::resource('country', 'CountryController', ['only' => ['create', 'store']]);
 Route::resource('city', 'CityController', ['only' => ['create', 'store']]);
+Route::resource('discount', 'DiscountController', ['only' => ['create', 'store']]);
