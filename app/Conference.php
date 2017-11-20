@@ -16,4 +16,13 @@ class Conference extends Model
     public function year() {
         return Carbon::createFromFormat('Y-m-d',$this->start_date)->year;        
     }
+    
+    public function images() {
+        return array(
+            'server_path' => public_path().'/uploads/',
+            'asset_path' => 'uploads/',
+            'image_small' => $this->id.'_small.png',
+            'image_large' => $this->id.'_large.png',
+        );
+    }
 }

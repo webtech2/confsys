@@ -56,6 +56,8 @@ class ConferenceController extends Controller
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
             'price' => 'required|numeric|min:0',
+            'image_small' => 'required|image|mimes:png',
+            'image_large' => 'required|image|mimes:png',
         );
         
         $this->validate($request, $rules);
@@ -71,6 +73,10 @@ class ConferenceController extends Controller
         $conference->price = $data['price'];
 
         $conference->save();
+
+        $images = $conference->images();
+        $file = $request->file('image_small')->move($images['server_path'], $images['image_small']);
+        $file = $request->file('image_large')->move($images['server_path'], $images['image_large']);
 
         return redirect()->action('ConferenceController@show', array($conference->id))->withMessage('Successfully added new conference!');
     }

@@ -9,7 +9,11 @@
                 <div class="panel-body">
                     @foreach ( $conferences as $conf )
                     <div class="list-item-with-icon row">
-                        <div class="col-md-8">
+                        <div class="col-md-4">
+                            <a href="{{ url('conference', $conf['id']) }}" class="gal">
+                                <img class="img-thumbnail" src="{{ asset( $conf->images()['asset_path'].$conf->images()['image_small'] ) }}" alt="">
+                            </a>
+                        </div>                        <div class="col-md-8">
                         <h4><a href="{{ url('conference', $conf['id']) }}">{{ $conf->acronym }} {{ $conf->year() }}, {{$conf->city->name}}, {{$conf->city->country->name}}
                         </a></h4>
                         <div>{{ $conf->start_date }} - {{ $conf->end_date }}</div>

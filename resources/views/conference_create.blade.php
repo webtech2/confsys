@@ -85,6 +85,28 @@
                     @endif                     
                     </div>
                     </div>
+                    <div class="form-group{{ $errors->has('image_small') ? ' has-error' : '' }}">
+                    {!! Form::label('image_small', 'Thumbnail image', ['class' => 'col-md-4 control-label']) !!}
+                    <div class="col-md-6">
+                    {!! Form::file('image_small', ['class'=>'btn btn-md']) !!}
+                    @if ($errors->has('image_small'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('image_small') }}</strong>
+                        </span>
+                    @endif                     
+                    </div>
+                    </div>
+                    <div class="form-group{{ $errors->has('image_large') ? ' has-error' : '' }}">
+                    {!! Form::label('image_large', 'Large image', ['class' => 'col-md-4 control-label']) !!}
+                    <div class="col-md-6">
+                    {!! Form::file('image_large', ['class'=>'btn btn-md']) !!}
+                    @if ($errors->has('image_large'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('image_large') }}</strong>
+                        </span>
+                    @endif                     
+                    </div>
+                    </div>
                     <div class="form-group">
                     <div class="col-md-8 col-md-offset-4">
                     {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}

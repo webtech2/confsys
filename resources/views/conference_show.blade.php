@@ -13,6 +13,7 @@
                     <p>Dates: {{ $conf->start_date }} - {{ $conf->end_date }}</p>
                     <p>Rating: {{ $conf->rating }}</p>
                     <p>Registration fee: {{ $conf->price }} &euro;</p>              
+                    <img src='{{ asset( $conf->images()['asset_path'].$conf->images()['image_large'] ) }}' >
                 </div>
             </div>
         </div>
