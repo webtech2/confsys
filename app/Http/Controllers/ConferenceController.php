@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class ConferenceController extends Controller
 {
+    // Middleware
+    public function __construct() {
+        // only Admin has access
+        $this->middleware('admin')->only(['create','store']);
+    }
+    
     /**
      * Display a listing of the resource.
      *

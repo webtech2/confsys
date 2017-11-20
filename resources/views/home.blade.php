@@ -13,6 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    @foreach($errors->all() as $message)
+                        <p class="has-error">{{ $message }}</p>
+                    @endforeach
 
                     <h4>Hello and welcome to our conference registration system, {{ Auth::user()->name }}</h4>
                 </div>

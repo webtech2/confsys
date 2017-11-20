@@ -37,8 +37,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="/conference">Conferences</a></li>
-                        <li><a href="{{ url('conference/create') }}">Add a new conference</a></li>
                         <li><a href="/registration">Registration</a></li>
+                        @if ( !Auth::guest() && Auth::user()->isAdmin() )
+                            <li><a href="/admin">Admin</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
