@@ -96,4 +96,15 @@ class ConferenceController extends Controller
     {
         return view('countries', array('countries' => Country::all()));
     }    
+    
+    // AJAX view
+    public function getSearch() {
+        return view('search');
+    }
+    // AJAX search
+    public function postSearch(Request $request) {
+        return Conference::where('name', 'LIKE', '%'.$request->get('search').'%')
+                ->orWhere('acronym', 'LIKE', '%'.$request->get('search').'%')->get();
+    }
+    
 }

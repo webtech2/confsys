@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!--JQuery-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -38,6 +41,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/conference">Conferences</a></li>
                         <li><a href="/countries/conferences">By Countries</a></li>
+                        <li><a href="/conferences/search">Search</a></li>
                         <li><a href="/registration">Registration</a></li>
                         @if ( !Auth::guest() && Auth::user()->isAdmin() )
                             <li><a href="/admin">Admin</a></li>

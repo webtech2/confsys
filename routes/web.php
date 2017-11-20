@@ -21,3 +21,5 @@ Route::resource('country', 'CountryController', ['only' => ['create', 'store']])
 Route::resource('city', 'CityController', ['only' => ['create', 'store']]);
 Route::resource('discount', 'DiscountController', ['only' => ['create', 'store']]);
 Route::get('countries/conferences', 'ConferenceController@indexByCountry');
+Route::get('conferences/search','ConferenceController@getSearch');
+Route::post('conferences/search','ConferenceController@postSearch');
