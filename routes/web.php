@@ -12,9 +12,8 @@ use App\Conference;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    
-});
+Route::get('/', 'ConferenceController@index');
+Route::resource('conference', 'ConferenceController', ['only' => ['index', 'show']]);
 
 Auth::routes();
 

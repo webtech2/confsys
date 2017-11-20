@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Conference extends Model
 {
@@ -11,5 +12,8 @@ class Conference extends Model
     ];
     public function city() { 
         return $this->belongsTo('App\City');
+    }
+    public function year() {
+        return Carbon::createFromFormat('Y-m-d',$this->start_date)->year;        
     }
 }
