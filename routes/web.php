@@ -13,7 +13,7 @@ use App\Conference;
 |
 */
 Route::get('/', 'ConferenceController@index');
-Route::resource('conference', 'ConferenceController', ['only' => ['index', 'show']]);
+Route::resource('conference', 'ConferenceController', ['except' => ['edit', 'update', 'destroy']]);
 
 Auth::routes();
 
